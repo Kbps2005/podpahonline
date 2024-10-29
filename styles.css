@@ -1,0 +1,230 @@
+body {
+    background-image: url('sua_imagem_de_fundo.jpg'); /* Verifique o caminho */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+    color: black; /* Alterado para preto */
+}
+
+#header {
+    background-color: rgba(51, 51, 51, 0.9);
+    padding: 10px;
+    text-align: center;
+}
+
+#produtos {
+    padding: 20px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Cria colunas responsivas */
+    gap: 20px; /* Espaçamento entre os itens */
+}
+
+.product {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.product img {
+    width: 150px; /* Largura padronizada */
+    height: 150px; /* Altura padronizada */
+    object-fit: cover; /* Ajusta a imagem para cobrir o espaço definido */
+    border-radius: 5px; /* Bordas arredondadas */
+}
+
+/* Estilo da Visualização do Carrinho */
+#cart-view {
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 600px;
+  background-color: black; /* Fundo preto */
+  color: white; /* Texto branco */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#cart-view h2 {
+  text-align: center;
+  color: white; /* Título em branco */
+}
+
+#cart-items {
+  list-style-type: none;
+  padding: 0;
+}
+
+#cart-items li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#cart-items li button {
+  background-color: #f44336; /* Cor do botão de remover */
+  color: white; /* Texto branco do botão */
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#cart-items li button:hover {
+  background-color: #c62828; /* Efeito hover para o botão */
+}
+
+#cart-view button {
+  background-color: #4CAF50; /* Cor do botão de finalizar pedido */
+  color: white; /* Texto branco */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#cart-view button:hover {
+  background-color: #388E3C; /* Efeito hover para o botão de finalizar pedido */
+}
+
+#precos {
+    padding: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #000;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid white;
+    color: white;
+}
+
+#footer {
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(51, 51, 51, 0.9);
+}
+
+/* Estilo da Tabela de Preços */
+#price-table {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 600px;
+    background-color: black; /* Fundo preto */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#price-table h2 {
+    text-align: center;
+    color: white; /* Texto branco para o título */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #333; /* Cor de fundo para cabeçalho da tabela */
+    color: white; /* Texto branco para cabeçalho */
+}
+
+td {
+    background-color: black; /* Fundo preto para células */
+    color: white; /* Texto branco para células */
+}
+
+tr:hover {
+    background-color: #444; /* Efeito hover para linhas */
+}
+
+button {
+    background-color: #007BFF; /* Cor azul padrão */
+    color: white; /* Texto branco */
+    border: none; /* Sem borda */
+    padding: 10px 20px; /* Espaçamento interno */
+    border-radius: 5px; /* Bordas arredondadas */
+    cursor: pointer; /* Muda o cursor ao passar o mouse */
+}
+
+button:hover {
+    background-color: #0056b3; /* Efeito hover */
+}
+#header h1 {
+    color: blue; /* Define a cor do título do cabeçalho para azul */
+}
+#header nav ul li a {
+    color: white; /* Define a cor dos links no cabeçalho para branco */
+    text-decoration: none; /* Remove o sublinhado dos links */
+    padding: 10px; /* Adiciona espaçamento ao redor dos links */
+}
+
+#header nav ul li a:hover {
+    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+}
+#header nav ul li a {
+    color: white; /* Define a cor dos links no cabeçalho para branco */
+    text-decoration: none; /* Remove o sublinhado dos links */
+    padding: 10px; /* Adiciona espaçamento ao redor dos links */
+}
+
+#header nav ul li a:hover {
+    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+}
+.product h3,
+.product p {
+    color: white; /* Define a cor do texto para branco */
+}
+#payment-container {
+    text-align: center;
+    padding: 20px;
+    max-width: 600px;
+    margin: auto;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#payment-container h2 {
+    color: #333;
+}
+
+#payment-amount, #payment-message {
+    font-size: 1.2em;
+    color: #333;
+}
+
+#qrcode img {
+    width: 150px;
+    height: 150px;
+    margin: 10px 0;
+}
+
+#instagram-link {
+    display: block;
+    margin-top: 15px;
+    font-size: 1.1em;
+    color: #007BFF;
+    text-decoration: none;
+}
+
+#instagram-link:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}

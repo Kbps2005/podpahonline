@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Pagamento</title>
+</head>
+<body>
+    <div id="payment-container">
+        <h2>Detalhes do Pagamento</h2>
+        <p id="payment-amount"></p>
+        <p id="payment-protocol"></p>
+        <div id="ordered-products"></div> <!-- Para mostrar produtos pedidos -->
+        <div id="qrcode">
+            <img src="qrcode.png" alt="QR Code para pagamento" />
+        </div>
+        <p>Caso prefira, copie a chave Pix: <strong>b393acba-76e7-4bd3-9e64-d7dc5f2b7bdb</strong></p>
+        <button id="copy-pix-key" onclick="copyPixKey()">Copiar Chave Pix</button>
+        <p id="payment-message"></p>
+        <a href="https://www.instagram.com/poods_pahh?igsh=MXRzeGh5MjF4Yno3MA==" target="_blank" id="instagram-link">Visite nosso Instagram</a>
+    </div>
+
+    <script>
+        // Exibe o valor do pagamento, protocolo e produtos pedidos
+        document.addEventListener('DOMContentLoaded', function() {
+            const total = localStorage.getItem('totalPedido');
+            const protocolNumber = localStorage.getItem('protocolNumber'); // Recupera o número do protocolo
+            const orderedProducts = JSON.parse(localStorage.getItem('orderedProducts')) || []; // Recupera os produtos pedidos
+
+            if (total) {
+                document.getElementById('payment-amount').textContent = `Total a Pagar: R$ ${total}`;
+                document.getElementById('payment-protocol').textContent = `Protocolo: ${protocolNumber}`;
+                
+                // Exibe os produtos pedidos
+                const productsList = orderedProducts.map(item => `${item.name} - R$ ${item.price.toFixed(2)} (x${item.quantity})`).join('<br>');
+                document.getElementById('ordered-products').innerHTML = `<strong>Produtos Pedidos:</strong><br>${productsList}`;
+                
+                document.getElementById('payment-message').textContent = "Obrigado pelo seu pedido! Estamos processando sua compra,para finalizar entre em contato no direct abaixo, envie o comprovante, escolha os sabores e nos confirme seu endereço para entrega.";
+            }
+        });
+
+        // Função para copiar a chave Pix
+        function copyPixKey() {
+            const pixKey = 'b393acba-76e7-4bd3-9e64-d7dc5f2b7bdb'; // Substitua pela sua chave Pix
+            navigator.clipboard.writeText(pixKey).then(() => {
+                alert('Chave Pix copiada para a área de transferência!');
+            }).catch(err => {
+                console.error('Erro ao copiar a chave Pix: ', err);
+            });
+        }
+    </script>
+</body>
+</html>
